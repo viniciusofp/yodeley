@@ -93,7 +93,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 
 .factory('wp', function ($resource, $q) {
 
-	var baseUrl = '?rest_route=/wp/v2/posts';
+	var baseUrl = '?rest_route=/wp/v2/';
 
 	var wp = [];
 	
