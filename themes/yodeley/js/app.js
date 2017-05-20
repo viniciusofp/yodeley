@@ -93,7 +93,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 
 .factory('wp', function ($resource, $q) {
 
-	var baseUrl = 'wp-json/wp/v2/';
+	var baseUrl = '?rest_route=/wp/v2/posts';
 
 	var wp = [];
 	
@@ -163,7 +163,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	};
 
 
-	$http.get("wp-json/wp/v2/posts?slug=" + $routeParams.postSlug).success(function(res){
+	$http.get("?rest_route=/wp/v2/posts?slug=" + $routeParams.postSlug).success(function(res){
 	    $scope.single = res[0]; 
 	    console.log($scope.single);	
 	});
