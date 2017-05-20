@@ -1,0 +1,280 @@
+/*
+Theme Name: Yodeley
+*/
+@import url("https://fonts.googleapis.com/css?family=Miriam+Libre:400,700");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,500,700");
+@import url("https://fonts.googleapis.com/css?family=Halant:500,700");
+body {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/blackorchid.png");
+  overflow-x: hidden; }
+
+body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
+  font-size-adjust: 0.5; }
+
+#wrapper {
+  font-size: 1em;
+  /* equivalent to 16px */
+  line-height: 1.25;
+  /* equivalent to 20px */ }
+
+@media (min-width: 768px) {
+  #wrapper {
+    font-size: 1em;
+    /* equivalent to 16px */
+    line-height: 1.375;
+    /* equivalent to 22px */ } }
+a, a:hover, a:active, a:visited {
+  text-decoration: none; }
+
+h1 {
+  font-size: 2em;
+  /* 2x body copy size = 32px */
+  line-height: 1.25;
+  /* 45px / 36px */ }
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+    /* 2.5x body copy size = 40px */
+    line-height: 1.125; } }
+@media (min-width: 1080px) {
+  h1 {
+    font-size: 3em;
+    /* 3x body copy size = 48px */
+    line-height: 1.05;
+    /* keep to a multiple of the 20px line height and something more appropriate for display headings */ } }
+h2 {
+  font-size: 1.625em;
+  /* 1.625x body copy size = 26px */
+  line-height: 1.15384615;
+  /* 30px / 26px */ }
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2em;
+    /* 2x body copy size = 32px */
+    line-height: 1.25; } }
+@media (min-width: 1080px) {
+  h2 {
+    font-size: 2.25em;
+    /* 2.25x body copy size = 36px */
+    line-height: 1.25; } }
+h3 {
+  font-size: 1.375em;
+  /* 1.375x body copy size = 22px */
+  line-height: 1.13636364;
+  /* 25px / 22px */ }
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.5em;
+    /* 1.5x body copy size = 24px */
+    line-height: 1.25; } }
+@media (min-width: 1080px) {
+  h3 {
+    font-size: 1.75em;
+    /* 1.75x body copy size = 28px */
+    line-height: 1.25; } }
+h4 {
+  font-size: 1.125em;
+  /* 1.125x body copy size = 18px */
+  line-height: 1.11111111; }
+
+@media (min-width: 768px) {
+  h4 {
+    line-height: 1.22222222;
+    /* (22px / 18px */ } }
+blockquote {
+  font-size: 1.25em;
+  /* 20px / 16px */
+  line-height: 1.25;
+  /* 25px / 20px */ }
+
+textarea {
+  max-height: 280px;
+  max-width: 500px; }
+
+@media (min-width: 768px) {
+  blockquote {
+    font-size: 1.5em;
+    /* 24px / 16px = */
+    line-height: 1.45833333;
+    /* 35px / 24px */ } }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: inherit;
+  font-family: "Work Sans", sans-serif; }
+
+a:hover,
+a:focus,
+a:visited {
+  color: inherit; }
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+img {
+  max-width: 100% !important;
+  height: auto; }
+
+.navbar.navbar-inverse {
+  margin-bottom: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #fff1e2;
+  max-width: 100vw; }
+
+ul.navbar-nav {
+  float: none;
+  text-align: center; }
+  ul.navbar-nav li {
+    float: none;
+    display: inline-block; }
+    ul.navbar-nav li a {
+      color: black;
+      text-transform: uppercase; }
+
+#particles-js {
+  background: transparent;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  pointer-events: none; }
+
+#brand-name {
+  color: #fff1e2;
+  font-weight: 300; }
+
+#quem-somos {
+  padding: 30px;
+  background: #101010;
+  color: white; }
+
+#wrapper {
+  overflow-x: hidden; }
+
+#modaal {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  overflow-y: scroll;
+  display: none; }
+  #modaal .fa-times {
+    color: #f8ba72;
+    z-index: 9999;
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 29px;
+    background-color: #181818;
+    border-radius: 43px 0 43px 43px;
+    padding: 8px 18px 10px 14px;
+    width: 50.44px;
+    transition: 0.2s; }
+    #modaal .fa-times:hover, #modaal .fa-times:focus, #modaal .fa-times:active, #modaal .fa-times:visited {
+      width: 103.33px; }
+      #modaal .fa-times:hover::after, #modaal .fa-times:focus::after, #modaal .fa-times:active::after, #modaal .fa-times:visited::after {
+        right: 13px; }
+    #modaal .fa-times::after {
+      content: 'FECHAR';
+      font-size: 12px;
+      font-weight: 600;
+      font-family: 'Work Sans', sans-serif;
+      position: absolute;
+      right: -60px;
+      top: 17px;
+      transition: 0.2s; }
+  #modaal.active {
+    display: block; }
+  #modaal .container {
+    background: #fff1e2;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 5px; }
+  #modaal p {
+    max-width: 600px;
+    margin: 0 auto 15px; }
+
+#modaal-shadow {
+  background: rgba(20, 20, 20, 0.8);
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0; }
+
+*, *:before, *:after {
+  box-sizing: border-box !important; }
+
+.item {
+  transition: all 0.2s ease-in;
+  margin-top: 100px; }
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .item:nth-child(2n + 1) {
+    clear: both; } }
+@media all and (min-width: 992px) {
+  .item:nth-child(3n+1) {
+    clear: both; } }
+.well {
+  position: relative;
+  display: block;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden; }
+  .well:hover {
+    background: #101010; }
+  .well img, .well iframe {
+    margin-bottom: 10px;
+    border-bottom: 3px solid #403d3a !important;
+    pointer-events: none; }
+  .well .meta {
+    padding: 20px 50px; }
+  .well h3 {
+    font-weight: 300;
+    color: #fff1e2;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0; }
+  .well h6 {
+    color: #fff1e2;
+    margin-top: 0;
+    text-transform: uppercase; }
+
+.item.ng-enter {
+  opacity: 0;
+  margin-top: 80px; }
+
+.item.ng-enter.ng-enter-active {
+  opacity: 1;
+  margin-top: 100px; }
+
+.item.ng-leave {
+  opacity: 1;
+  margin-top: 50px; }
+
+.item.ng-leave.ng-leave-active {
+  opacity: 0;
+  margin-top: 80px; }
+
+/*# sourceMappingURL=style.css.map */

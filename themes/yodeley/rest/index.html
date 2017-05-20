@@ -1,0 +1,116 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic Page Setup</title>
+<!-- CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<style>
+
+
+			.ng-enter, 
+			.ng-leave { 
+			    -webkit-transition: 225ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+			    -moz-transition: 225ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+			    -ms-transition: 225ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+			    -o-transition: 225ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+			    transition: 225ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+
+			    opacity: 1;
+
+			} 
+			 
+			.ng-leave.ng-leave-active {
+			    opacity: 0;
+			  }
+		</style>
+
+	</head>
+	<body ng-app="yodeley">
+
+
+<!-- 	END HEADER -->
+<!-- BEGIN CONTENT -->
+		<div>
+			<div id="header-2" class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div id="contact-card">
+							<div class="pull-left">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
+							</div>
+							<div class="pull-right">
+								<p><i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-phone" aria-hidden="true"></i> <i class="fa fa-whatsapp" aria-hidden="true"></i></p>							
+							</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		<div id="wrapper" ng-controller="quemSomos">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3" style="position: fixed;
+					    top: 0;
+					    left: 0;
+					    z-index: 999;
+					    background: #222222;
+					    color: #fafafa;
+					    height: 100vh;
+					    overflow-y: scroll;">
+						<div class="row">
+							<div class="col-sm-12" ng-animate-swap="post" ng-repeat="post in posts">
+								<h6 ng-click="openPost(post.id)" ng-bind-html="post.title.rendered"></h6>
+								
+								<hr>
+							</div>
+						</div>
+					</div>
+
+
+
+				  <div class="col-sm-9 col-sm-offset-3">
+				  	<h2 ng-bind-html="post.title.rendered"></h2>
+				  	<div ng-bind-html="post.content.rendered"></div>
+					<div class="row">
+						<div ng-click="changeCat(999)" class="col-sm-12" style="color: #c03eaa"><h4>All</h4></div>
+						<div class="col-sm-12" ng-repeat="cat in categories">
+							<h4 ng-click="changeCat(cat.id)" ng-bind-html="cat.name" style="color: #3eaac0"></h4>
+						</div>
+					</div>
+				  </div>
+				</div>
+			</div>	
+				
+		</div>
+<!-- END CONTENT  -->
+<!-- BEGIN FOOTER -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+
+					</div>
+				</div>
+						
+			</div>
+		</div>
+<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-sanitize.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+		<script
+		  src="https://code.jquery.com/jquery-3.2.0.min.js"
+		  integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I="
+		  crossorigin="anonymous"></script>
+		<script src="js/app.js"></script>
+
+	</body>
+</html>

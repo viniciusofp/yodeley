@@ -1,0 +1,13 @@
+<div id="modaal" class="active">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-12 col-md-8 col-md-offset-2 text-center">
+				<h4 style="color: #fa0e0e" ng-click="closeModaal()">FECHAR (the post is opened)</h4>
+				<h2 ng-bind-html="single.title.rendered"></h2>
+		  		<div ng-bind-html="single.content.rendered"></div>
+			</div>
+		</div>
+	</div>
+	<div id="modaal-shadow" ng-click="closeModaal()"></div>
+</div>
