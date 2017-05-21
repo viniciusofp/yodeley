@@ -10,7 +10,7 @@ $blue: #3c4272;
 $purple: #8370c0;
 $yellow: #f8ba72;
 $brown: #403d3a;
-$white: #fff1e2;
+$white: #00f1e2;
 $black: #181818;
 
 $font-face: 'Work Sans';
@@ -20,8 +20,8 @@ body {
 	font-family: $font-face, sans-serif;
 	font-weight: 300;
 	font-size: 366px;
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/blackorchid.png");
-    overflow-x: hidden;
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/blackorchid.png");
+  overflow-x: hidden;
 }
 
 body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
