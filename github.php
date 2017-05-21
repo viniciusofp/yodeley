@@ -1,1 +1,5 @@
-<?php 'git pull'; ?>
+<?php 
+
+shell_exec( 'git reset --hard HEAD && git pull' );
+
+?>
