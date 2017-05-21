@@ -1,9 +1,7 @@
 /*
 Theme Name: Yodeley
 */
-@import url('https://fonts.googleapis.com/css?family=Miriam+Libre:400,700');
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,500,700');
-@import url('https://fonts.googleapis.com/css?family=Halant:500,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600,700');
 
 $red: #bc475c;
 $blue: #3c4272;
@@ -13,13 +11,13 @@ $brown: #403d3a;
 $white: #fff1e2;
 $black: #181818;
 
-$font-face: 'Work Sans';
+$font-face: 'Open Sans';
 
 
 body {
-	font-family: $font-face, sans-serif;
+	font-family: $font-face, Helvetica, sans-serif;
 	font-weight: 300;
-	font-size: 24px;
+	font-size: 17px;
   background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/blackorchid.png");
   overflow-x: hidden;
 }
@@ -133,6 +131,15 @@ h4 {
   }
 }
 
+h5 {
+  font-size: 1em;
+  line-height: 1.11111111;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+
+
 blockquote {
   font-size: 1.25em;
   /* 20px / 16px */
@@ -155,7 +162,7 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 700;
+	font-weight: 600;
 	color: inherit;
 	font-family: $font-face, sans-serif;
 }
@@ -224,6 +231,44 @@ ul.navbar-nav {
 	padding: 30px;
     background: #101010;
     color: white;
+}
+
+#cats {
+  .row > div {
+    height: 50vh;
+    color: white;
+    background-color: $brown;
+    border: 1px solid $brown;
+    transition: 0.2s;
+    &:hover {
+      background-color: $black;
+      cursor: pointer;
+      .bg-img {
+        opacity: 0.1;
+      }
+    }
+  }
+  .bg-img {
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    background-size: cover;
+    transition: 0.2s;
+  }
+  .meta {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    h2  {
+      font-size: 2.5em;
+      font-weight: 300;
+      text-transform: lowercase;
+    }
+    & p {
+      font-weight: 300;
+      opacity: 0.7
+    }
+  }
 }
 
 // PAGE WRAPER

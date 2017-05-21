@@ -18,26 +18,4 @@
   crossorigin="anonymous"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/adaptivebackground.js"></script>
 
-<nav class="navbar navbar-inverse" ng-controller="Nav">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/#/">Brand</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="cat in categories"><a ng-href="/#/{{ cat.slug }}"><h5 ng-bind-html="cat.name"></h5></a></li>
-      </ul>
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<!-- 	END HEADER -->
+<yodeley-header></yodeley-header>

@@ -59,6 +59,15 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	Directives
 */
 
+// Header
+.directive('yodeleyHeader', function() {
+  
+  return {
+      restrict: 'E',
+      templateUrl: '/wp-content/themes/yodeley/directives/header.html'
+  };
+
+})
 // Modal de post
 .directive('modaal', function() {
   
