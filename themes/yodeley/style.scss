@@ -233,7 +233,7 @@ img {
     top: 0;
     left: 0;
     pointer-events: none;
-    opacity: 0.5
+    opacity: 0.25
 }
 
 #brand {
@@ -295,27 +295,39 @@ img {
     position: absolute;
     height: 50%;
     width: 50%;
-    opacity: 0.15;
+    opacity: 0.3;
     background-size: cover;
     background-position: center;
     transition: 0.2s;
     &:nth-child(1) {
       top: 0;
       left: 0;
+      @media all and (max-width: 1280px) and (min-width: 768px) {
+        width: 100%;
+      }
       
     }
     &:nth-child(2) {
       top: 0;
       right: 0;
+      @media all and (max-width: 1280px) and (min-width: 768px) {
+        display: none;
+      }
       
     }
     &:nth-child(3) {
       bottom: 0;
       left: 0;
+      @media all and (max-width: 1280px) and (min-width: 768px) {
+        width: 100%;
+      }
     }
     &:nth-child(4) {
       bottom: 0;
       right: 0;
+      @media all and (max-width: 1280px) and (min-width: 768px) {
+        display: none;
+      }
       
     }
   }
@@ -332,6 +344,20 @@ img {
       font-weight: 300;
       opacity: 0.7
     }
+  }
+}
+
+#produtora {
+  text-align: center;
+  color: $white;
+  h2 {
+    display: inline-block;
+    padding: 5px 15px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    border: 2px solid $white;
+    text-transform: uppercase;
+
   }
 }
 

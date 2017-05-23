@@ -86,6 +86,15 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
   };
 
 })
+// Grade de posts Home
+.directive('itemHome', function() {
+  
+  return {
+      restrict: 'E',
+      templateUrl: '/wp-content/themes/yodeley/directives/item-home.html'
+  };
+
+})
 // Conteúdo Home Page
 .directive('homeContent', function() {
   

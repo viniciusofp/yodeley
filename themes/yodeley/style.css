@@ -165,7 +165,7 @@ img {
   top: 0;
   left: 0;
   pointer-events: none;
-  opacity: 0.5; }
+  opacity: 0.25; }
 
 #brand {
   padding: 60px 30px 0;
@@ -214,22 +214,34 @@ img {
   position: absolute;
   height: 50%;
   width: 50%;
-  opacity: 0.15;
+  opacity: 0.3;
   background-size: cover;
   background-position: center;
   transition: 0.2s; }
   #cats .bg-img:nth-child(1) {
     top: 0;
     left: 0; }
+    @media all and (max-width: 1280px) and (min-width: 768px) {
+      #cats .bg-img:nth-child(1) {
+        width: 100%; } }
   #cats .bg-img:nth-child(2) {
     top: 0;
     right: 0; }
+    @media all and (max-width: 1280px) and (min-width: 768px) {
+      #cats .bg-img:nth-child(2) {
+        display: none; } }
   #cats .bg-img:nth-child(3) {
     bottom: 0;
     left: 0; }
+    @media all and (max-width: 1280px) and (min-width: 768px) {
+      #cats .bg-img:nth-child(3) {
+        width: 100%; } }
   #cats .bg-img:nth-child(4) {
     bottom: 0;
     right: 0; }
+    @media all and (max-width: 1280px) and (min-width: 768px) {
+      #cats .bg-img:nth-child(4) {
+        display: none; } }
 #cats .meta {
   width: 100%;
   max-width: 400px;
@@ -241,6 +253,17 @@ img {
   #cats .meta p {
     font-weight: 300;
     opacity: 0.7; }
+
+#produtora {
+  text-align: center;
+  color: #fff1e2; }
+  #produtora h2 {
+    display: inline-block;
+    padding: 5px 15px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    border: 2px solid #fff1e2;
+    text-transform: uppercase; }
 
 #wrapper {
   overflow-x: hidden; }
