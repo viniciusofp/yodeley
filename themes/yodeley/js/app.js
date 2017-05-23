@@ -97,7 +97,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 })
 
 /*
-	WP REST API Service
+	WP REST API Factory
 */
 
 .factory('wp', function ($resource, $q) {
@@ -109,14 +109,18 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	wp.posts = $resource(baseUrl + "posts?per_page=12").query();
 
 	wp.catPosts = function (catId) {
-		return $resource(baseUrl + "posts?per_page=12&categories=" + catId).query();
+		return $resource(baseUrl + "posts?per_page=12&order=desc&categories=" + catId).query();
+	}
+
+	wp.catLastPost = function (catId) {
+		return $resource(baseUrl + "posts?per_page=1&order=desc&categories=" + catId).query();
 	}
 
 	wp.singlePost = function (slug) {
 		return $resource(baseUrl + "posts?slug=" + slug).query();
 	}
 
-	wp.categories = $resource(baseUrl + "categories").query();
+	wp.categories = $resource(baseUrl + "categories?order_by=slug").query();
 	
 	wp.getCategories = function (catSlug) {
 		return $resource(baseUrl + "categories?slug=" + catSlug).query();
@@ -134,6 +138,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	return wp
 
 })
+
 
 /*
 	Controllers
@@ -205,9 +210,47 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 
 // Nav Controller
 
-.controller('Nav', ['$scope', '$routeParams',  'wp', function($scope, $routeParams, wp) {
+.controller('Nav', ['$scope', '$routeParams', '$q',  'wp', function($scope, $routeParams, $q, wp) {
 
 	$scope.categories = wp.categories;
+
+}])
+
+// Cat Grid Controller
+
+.controller('CatGrid', ['$scope', '$routeParams', '$q',  'wp', function($scope, $routeParams, $q, wp) {
+
+	$scope.categories = wp.categories;
+	console.log($scope.categories);
+
+	$scope.imgs = [];
+
+
+	$q.all([
+	    $scope.categories.$promise
+	]).then( function (data) {
+		for (i in data[0]) {
+		
+			i = parseInt(i);
+
+			if (Number.isInteger(i)) {
+
+				$scope.imgs[i] = wp.catLastPost(data[0][i].id)
+
+			};
+
+		}
+		console.log($scope.imgs);
+	});
+
+
+	$scope.catGrid = function(index) {
+		if (index <= 2) {
+			return 'col-sm-4';
+		} else {
+			return 'col-sm-6'
+		};
+	}
 
 }]);
 

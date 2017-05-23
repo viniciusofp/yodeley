@@ -1,3 +1,23 @@
+<div id="upperHeader" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <a href="/#/home"><img id="brand" src="/wp-content/themes/yodeley/img/logo.png"></a>
+      <div id="social" class="hidden-xs">
+        <ul>
+          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+          <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+          <li><i class="fa fa-youtube" aria-hidden="true"></i></li>
+        </ul>
+        <div id="entreemcontato">
+          <p>entre em contato</p>
+          <h4>contato@yodeley.com.br</h4>
+        </div>
+      </div>  
+    </div>
+  </div>
+    
+</div>
+
 <nav class="navbar navbar-inverse" ng-controller="Nav">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -13,7 +33,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ng-repeat="cat in categories"><a ng-href="/#/{{ cat.slug }}"><h5 ng-bind-html="cat.name"></h5></a></li>
+        <li ng-repeat="cat in categories"><a ng-href="/#/{{ cat.slug }}" ng-bind-html="cat.name"></a></li>
       </ul>
 
     </div><!-- /.navbar-collapse -->

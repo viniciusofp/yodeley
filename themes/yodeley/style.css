@@ -6,7 +6,7 @@ body {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 17px;
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/blackorchid.png");
+  background-image: url("/wp-content/themes/yodeley/img/bodyBg.png");
   overflow-x: hidden; }
 
 body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
@@ -107,6 +107,13 @@ textarea {
     /* 24px / 16px = */
     line-height: 1.45833333;
     /* 35px / 24px */ } }
+ul {
+  padding-left: 0;
+  margin: 0; }
+
+li {
+  list-style: none; }
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: inherit;
@@ -132,17 +139,21 @@ img {
   border-radius: 0;
   background: transparent;
   color: #fff1e2;
-  max-width: 100vw; }
+  max-width: 100vw;
+  border: none; }
 
-ul.navbar-nav {
+.navbar-inverse ul.navbar-nav {
   float: none;
-  text-align: center; }
-  ul.navbar-nav li {
+  text-align: center;
+  margin-bottom: 15px; }
+  .navbar-inverse ul.navbar-nav li {
     float: none;
     display: inline-block; }
-    ul.navbar-nav li a {
-      color: black;
-      text-transform: uppercase; }
+    .navbar-inverse ul.navbar-nav li a {
+      font-size: 1.2em;
+      color: #f8ba72;
+      text-transform: lowercase;
+      cursor: pointer; }
 
 #particles-js {
   background: transparent;
@@ -152,16 +163,39 @@ ul.navbar-nav {
   z-index: -1;
   top: 0;
   left: 0;
-  pointer-events: none; }
+  pointer-events: none;
+  opacity: 0.5; }
 
-#brand-name {
-  color: #fff1e2;
-  font-weight: 300; }
+#brand {
+  padding: 60px 30px 0;
+  width: 400px; }
 
-#quem-somos {
-  padding: 30px;
-  background: #101010;
-  color: white; }
+#upperHeader {
+  position: relative; }
+  #upperHeader #social {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 60px 30px 30px;
+    color: #f8ba72;
+    text-align: center; }
+    #upperHeader #social li {
+      display: inline;
+      color: #f8ba72;
+      font-size: 1.5em;
+      padding-left: 15px; }
+      #upperHeader #social li:first-of-type {
+        padding-left: 0; }
+    #upperHeader #social #entreemcontato {
+      margin-top: 15px;
+      padding: 6px 12px 2px;
+      border: 2px solid #fff1e2; }
+      #upperHeader #social #entreemcontato p {
+        margin: 0; }
+      #upperHeader #social #entreemcontato h4 {
+        margin-top: 0;
+        font-size: 1em; }
 
 #cats .row > div {
   height: 50vh;
@@ -185,7 +219,8 @@ ul.navbar-nav {
   max-width: 400px;
   padding: 30px; }
   #cats .meta h2 {
-    font-size: 2.5em;
+    margin-top: 0;
+    font-size: 2em;
     font-weight: 300;
     text-transform: lowercase; }
   #cats .meta p {

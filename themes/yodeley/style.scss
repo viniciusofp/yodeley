@@ -18,7 +18,7 @@ body {
 	font-family: $font-face, Helvetica, sans-serif;
 	font-weight: 300;
 	font-size: 17px;
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/blackorchid.png");
+  background-image: url("/wp-content/themes/yodeley/img/bodyBg.png");
   overflow-x: hidden;
 }
 
@@ -161,6 +161,15 @@ textarea {
   }
 }
 
+
+ul {
+  padding-left: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	color: inherit;
@@ -192,20 +201,24 @@ img {
 .navbar.navbar-inverse {
 	margin-bottom: 0;
 	border-radius: 0;
-    background: transparent;
-    color: $white;
-    max-width: 100vw;
+  background: transparent;
+  color: $white;
+  max-width: 100vw;
+  border: none;
 }
 
-ul.navbar-nav {
+.navbar-inverse ul.navbar-nav {
 	float: none;
-    text-align: center;
+  text-align: center;
+  margin-bottom: 15px;
 	li {
 	    float: none;
 	    display: inline-block;
 	    a {
-	    	color: black;
-	    	text-transform: uppercase;
+        font-size: 1.2em;
+	    	color: $yellow;
+	    	text-transform: lowercase;
+        cursor: pointer;
 	    }
 	}
 }
@@ -220,17 +233,46 @@ ul.navbar-nav {
     top: 0;
     left: 0;
     pointer-events: none;
+    opacity: 0.5
 }
 
-#brand-name {
-	color: $white;
-	font-weight: 300;
+#brand {
+  padding: 60px 30px 0;
+  width: 400px;
 }
 
-#quem-somos {
-	padding: 30px;
-    background: #101010;
-    color: white;
+#upperHeader {
+  position: relative;
+  #social {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    padding: 60px 30px 30px;
+    color: $yellow;
+    text-align: center;
+    li {
+      display: inline;
+      color: $yellow;
+      font-size: 1.5em;
+      padding-left: 15px;
+      &:first-of-type {
+        padding-left: 0;
+      }
+    }
+    #entreemcontato {
+      margin-top: 15px;
+      padding: 6px 12px 2px;
+      border: 2px solid $white;
+      p {
+        margin: 0;
+      }
+      h4 {
+        margin-top: 0;
+        font-size: 1em;
+      }
+    }
+  }
 }
 
 #cats {
@@ -260,7 +302,8 @@ ul.navbar-nav {
     max-width: 400px;
     padding: 30px;
     h2  {
-      font-size: 2.5em;
+      margin-top: 0;
+      font-size: 2em;
       font-weight: 300;
       text-transform: lowercase;
     }
