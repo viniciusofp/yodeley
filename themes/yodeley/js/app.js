@@ -106,7 +106,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 
 	var wp = [];
 	
-	wp.posts = $resource(baseUrl + "posts?per_page=12").query();
+	wp.posts = $resource(baseUrl + "posts?per_page=3").query();
 
 	wp.catPosts = function (catId) {
 		return $resource(baseUrl + "posts?per_page=12&order=desc&categories=" + catId).query();
