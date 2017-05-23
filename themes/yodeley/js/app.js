@@ -133,6 +133,9 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	
 	wp.getCategories = function (catSlug) {
 		return $resource(baseUrl + "categories?slug=" + catSlug).query();
+	}
+	wp.getCategoryById = function (catId) {
+		return $resource(baseUrl + "categories/" + catId).get();
 	} 
 
 	wp.thePost = function (slug) {
@@ -161,6 +164,24 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 			slug: 'home',
 		}];
 	$scope.posts = wp.posts;
+
+	$scope.catArray = [];
+
+	$q.all([
+	    $scope.posts.$promise
+	]).then( function (data) {
+		for (i in data[0]) {
+		
+			i = parseInt(i);
+
+			if (Number.isInteger(i)) {
+				$scope.catArray[i] = wp.getCategoryById(data[0][i].categories[0])
+
+				console.log($scope.catNames)
+			};
+
+		}
+	});
 
 }])
 

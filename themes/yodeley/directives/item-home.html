@@ -4,8 +4,8 @@
 
 
 			<div class="meta absolute-center">
-	<!-- 				<h6>{{ post.date_gmt | date : 'd/M/yy, h:m'}}</h6>
-	-->				<h3 ng-bind-html="post.title.rendered"></h3>
+	 				<h6 ng-bind-html="catArray[$index].name">{{ post.date_gmt | date : 'd/M/yy, h:m'}}</h6>
+					<h3 ng-bind-html="post.title.rendered"></h3>
 	<!-- 			<p ng-if="post.format == 'standard'" ng-bind-html="post.excerpt.rendered"></p> -->
 					
 			</div>		
