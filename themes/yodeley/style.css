@@ -119,6 +119,7 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
   font-family: "Open Sans", sans-serif; }
 
+a,
 a:hover,
 a:focus,
 a:visited {
@@ -201,19 +202,34 @@ img {
   height: 50vh;
   color: white;
   background-color: #403d3a;
-  border: 1px solid #403d3a;
-  transition: 0.2s; }
+  border: 1px solid #181818;
+  transition: 0.2s;
+  position: relative; }
   #cats .row > div:hover {
     background-color: #181818;
     cursor: pointer; }
     #cats .row > div:hover .bg-img {
       opacity: 0.1; }
 #cats .bg-img {
-  height: 100%;
-  width: 100%;
-  opacity: 0.4;
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  opacity: 0.15;
   background-size: cover;
+  background-position: center;
   transition: 0.2s; }
+  #cats .bg-img:nth-child(1) {
+    top: 0;
+    left: 0; }
+  #cats .bg-img:nth-child(2) {
+    top: 0;
+    right: 0; }
+  #cats .bg-img:nth-child(3) {
+    bottom: 0;
+    left: 0; }
+  #cats .bg-img:nth-child(4) {
+    bottom: 0;
+    right: 0; }
 #cats .meta {
   width: 100%;
   max-width: 400px;
@@ -221,7 +237,6 @@ img {
   #cats .meta h2 {
     margin-top: 0;
     font-size: 2em;
-    font-weight: 300;
     text-transform: lowercase; }
   #cats .meta p {
     font-weight: 300;

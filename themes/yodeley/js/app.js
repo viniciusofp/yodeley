@@ -113,7 +113,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	}
 
 	wp.catLastPost = function (catId) {
-		return $resource(baseUrl + "posts?per_page=1&order=desc&categories=" + catId).query();
+		return $resource(baseUrl + "posts?per_page=4&order=desc&categories=" + catId).query();
 	}
 
 	wp.singlePost = function (slug) {

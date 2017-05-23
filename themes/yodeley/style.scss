@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $font-face, sans-serif;
 }
 
-
+a,
 a:hover,
 a:focus,
 a:visited {
@@ -280,8 +280,9 @@ img {
     height: 50vh;
     color: white;
     background-color: $brown;
-    border: 1px solid $brown;
+    border: 1px solid $black;
     transition: 0.2s;
+    position: relative;
     &:hover {
       background-color: $black;
       cursor: pointer;
@@ -291,11 +292,32 @@ img {
     }
   }
   .bg-img {
-    height: 100%;
-    width: 100%;
-    opacity: 0.4;
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    opacity: 0.15;
     background-size: cover;
+    background-position: center;
     transition: 0.2s;
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+      
+    }
+    &:nth-child(2) {
+      top: 0;
+      right: 0;
+      
+    }
+    &:nth-child(3) {
+      bottom: 0;
+      left: 0;
+    }
+    &:nth-child(4) {
+      bottom: 0;
+      right: 0;
+      
+    }
   }
   .meta {
     width: 100%;
@@ -304,7 +326,6 @@ img {
     h2  {
       margin-top: 0;
       font-size: 2em;
-      font-weight: 300;
       text-transform: lowercase;
     }
     & p {
