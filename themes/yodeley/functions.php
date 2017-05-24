@@ -9,6 +9,45 @@ add_theme_support( 'post-thumbnails' );
 
 // Prepare API
 
+
+/**
+ * Register a equipe post type, with REST API support
+ *
+ * Based on example at: https://codex.wordpress.org/Function_Reference/register_post_type
+ */
+add_action( 'init', 'my_equipe' );
+function my_equipe() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Equipe',
+      'supports'     => array( 'title', 'editor', 'thumbnail', 'excerpt', 'description' ),
+
+    );
+    register_post_type( 'equipe', $args );
+}
+
+add_action( 'rest_api_init', 'slug_register_equipe_thumbnail' );
+function slug_register_equipe_thumbnail() {
+    register_rest_field( 'equipe',
+        'featured_image',
+        array(
+            'get_callback'    => 'slug_get_equipe_thumbnail',
+        )
+    );
+}
+function slug_get_equipe_thumbnail( $data, $post, $request ) {
+
+	$thumbnail_id = get_post_thumbnail_id( $post->ID );
+	$thumbnail = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail' );
+	$object = (object) $thumbnail[0];
+	$res = (object) $object;
+	return $res->scalar;
+}
+
+
+
+// Soundcloud post field
 add_action( 'rest_api_init', 'slug_register_soundcloud' );
 function slug_register_soundcloud() {
     register_rest_field( 'post',

@@ -5,6 +5,8 @@
 		</div>	
 		<ng-view></ng-view>
 
+		<yodeley-footer></yodeley-footer>
+
 <!-- END CONTENT  -->
 <!-- BEGIN FOOTER -->
 

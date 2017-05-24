@@ -68,6 +68,15 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
   };
 
 })
+// Footer
+.directive('yodeleyFooter', function() {
+  
+  return {
+      restrict: 'E',
+      templateUrl: '/wp-content/themes/yodeley/directives/footer.html'
+  };
+
+})
 // Modal de post
 .directive('modaal', function() {
   
@@ -86,7 +95,16 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
   };
 
 })
-// Grade de posts Home
+// Grade de categorias Home
+.directive('catGrid', function() {
+  
+  return {
+      restrict: 'E',
+      templateUrl: '/wp-content/themes/yodeley/directives/cat-grid.html'
+  };
+
+})
+// Conteúdo posts Home Page
 .directive('itemHome', function() {
   
   return {
@@ -95,12 +113,21 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
   };
 
 })
-// Conteúdo Home Page
-.directive('homeContent', function() {
+// Page Equipe
+.directive('pageEquipe', function() {
   
   return {
       restrict: 'E',
-      templateUrl: '/wp-content/themes/yodeley/directives/home-content.html'
+      templateUrl: '/wp-content/themes/yodeley/directives/page-equipe.html'
+  };
+
+})
+// Page Produtora
+.directive('pageProdutora', function() {
+  
+  return {
+      restrict: 'E',
+      templateUrl: '/wp-content/themes/yodeley/directives/page-produtora.html'
   };
 
 })
@@ -117,6 +144,8 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	
 	wp.posts = $resource(baseUrl + "posts?per_page=3").query();
 
+	wp.equipe = $resource(baseUrl + "equipe").query();
+
 	wp.catPosts = function (catId) {
 		return $resource(baseUrl + "posts?per_page=12&order=desc&categories=" + catId).query();
 	}
@@ -127,6 +156,10 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 
 	wp.singlePost = function (slug) {
 		return $resource(baseUrl + "posts?slug=" + slug).query();
+	}
+
+	wp.singlePage = function (slug) {
+		return $resource(baseUrl + "pages?slug=" + slug).query();
 	}
 
 	wp.categories = $resource(baseUrl + "categories?order_by=slug").query();
@@ -177,12 +210,41 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 			if (Number.isInteger(i)) {
 				$scope.catArray[i] = wp.getCategoryById(data[0][i].categories[0])
 
-				console.log($scope.catNames)
 			};
 
 		}
 	});
 
+
+
+}])
+
+// Produtora Controller
+
+.controller('Produtora', ['$scope', '$routeParams', '$q', '$location',  'wp', function($scope, $routeParams, $q, $location, wp) {
+	$q.all([
+	    wp.singlePage('produtora').$promise
+	]).then( function (data) { 
+		$scope.produtora = data[0][0];
+		console.log($scope.produtora)
+	});
+}])
+
+// Equipe Controller
+
+.controller('Equipe', ['$scope', '$routeParams', '$q', '$location',  'wp', function($scope, $routeParams, $q, $location, wp) {
+	$scope.equipe = wp.equipe;
+	$q.all([
+	    $scope.equipe.$promise
+	]).then( function (data) { 
+		data[0].sort(function(a, b){
+		    if(a.title.rendered < b.title.rendered) return -1;
+		    if(a.title.rendered > b.title.rendered) return 1;
+		    return 0;
+		})		
+	});
+
+	console.log($scope.equipe)
 }])
 
 // Single Page Controller

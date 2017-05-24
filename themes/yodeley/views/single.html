@@ -1,12 +1,23 @@
 <div id="wrapper">
 
-	<home-content ng-if="theRoute[0].slug == 'home'"></home-content>
+	<div ng-if="theRoute[0].slug == 'home'">
+	
+		<cat-grid></cat-grid>
 
-	<div class="container" style="padding-top: 50px;">
+		<page-produtora></page-produtora>
+
+		<page-equipe></page-equipe>
+		
+	</div>
+
+	<div class="container" style="padding-top: 50px;" ng-if="theRoute[0].slug != 'home'">
 		<div class="row itemrow">
 			<item></item>
 		</div>
 	</div>
+
+	<item-home ng-if="theRoute[0].slug == 'home'"></item-home>
+
 </div>
 
 <modaal></modaal>
