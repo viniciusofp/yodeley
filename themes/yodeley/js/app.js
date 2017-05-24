@@ -258,15 +258,52 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 			slug: 'home'
 		}];
 		$scope.posts = wp.posts;
+
+		$scope.catArray = [];
+
+		$q.all([
+		    $scope.posts.$promise
+		]).then( function (data) {
+			for (i in data[0]) {
+			
+				i = parseInt(i);
+
+				if (Number.isInteger(i)) {
+					$scope.catArray[i] = wp.getCategoryById(data[0][i].categories[0])
+
+				};
+
+			}
+		});
+
 	} else {
 		$scope.theRoute = wp.getCategories($routeParams.catSlug);
 
 		$q.all([
 		    $scope.theRoute.$promise
 		]).then( function (data) { 
-			$scope.posts = wp.catPosts(data[0][0].id);	
+			$scope.posts = wp.catPosts(data[0][0].id);
+
+			$scope.catArray = [];
+
+		$q.all([
+		    $scope.posts.$promise
+		]).then( function (data) {
+			for (i in data[0]) {
+			
+				i = parseInt(i);
+
+				if (Number.isInteger(i)) {
+					$scope.catArray[i] = wp.getCategoryById(data[0][i].categories[0])
+
+				};
+
+			}
+		});	
 		});
 	};
+
+
 
 
 	$http.get("index.php/wp-json/wp/v2/posts?slug=" + $routeParams.postSlug).success(function(res){

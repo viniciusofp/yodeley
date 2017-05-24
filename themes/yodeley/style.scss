@@ -2,6 +2,8 @@
 Theme Name: Yodeley
 */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600,700');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,500,600');
+
 
 $red: #bc475c;
 $blue: #3c4272;
@@ -12,6 +14,7 @@ $white: #fff1e2;
 $black: #181818;
 
 $font-face: 'Open Sans';
+$font-face2: 'Oswald';
 
 
 body {
@@ -171,9 +174,9 @@ li {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 600;
+	font-weight: 500;
 	color: inherit;
-	font-family: $font-face, sans-serif;
+	font-family: $font-face2, sans-serif;
 }
 
 a,
@@ -294,6 +297,12 @@ img {
     &:hover {
       background-color: $black;
       cursor: pointer;
+      .meta p {
+        display: block;
+      }
+      .meta h2 {
+        color: $yellow;
+      }
       .bg-img {
         opacity: 0.1;
       }
@@ -343,15 +352,20 @@ img {
     width: 100%;
     max-width: 400px;
     padding: 30px;
+    text-align: center;
     h2  {
       margin-top: 0;
-      font-size: 2em;
+      font-size: 3em;
+      font-weight: 300;
+      color: $white;
       text-transform: lowercase;
+      transition: 0.5s;
     }
     & p {
       font-weight: 300;
       opacity: 1;
-      color: $white
+      color: $white;
+      display: none;
     }
   }
 }
@@ -371,7 +385,6 @@ img {
 
 .item-home {
   height: 250px;
-  margin-bottom: 50px;
   color: white;
   background: rgb(24,24,24);
   background: -moz-linear-gradient(45deg, rgba(24,24,24,1) 0%, rgba(43,41,39,1) 100%);
@@ -392,9 +405,15 @@ img {
   .meta { z-index: 999}
   h3 {
     margin-top: 0;
+    font-family: $font-face;
+    font-weight: 600;
   }
   h6  {
     margin-bottom: 5px;
+    color: $yellow;
+    text-transform: lowercase;
+    font-size: 1.5em;
+    font-weight: 300;
   }
 }
 
@@ -412,7 +431,6 @@ img {
     text-transform: lowercase;
   }
   h3 {
-    font-size: 1.2em;
   }
   img {
     margin-right: 20px;
