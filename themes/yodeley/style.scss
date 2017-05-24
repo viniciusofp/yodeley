@@ -359,8 +359,8 @@ img {
 #produtora {
   text-align: center;
   color: white;
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
   h1 {
     display: inline-block;
     margin-bottom: 30px;
@@ -400,15 +400,19 @@ img {
 
 #equipe {
   background-color: $white;
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+  .panel-default {
+    background: transparent;
+    border-color: white;
+  }
   h1 {
     display: inline-block;
     margin-bottom: 30px;
     text-transform: lowercase;
   }
   h3 {
-    margin-top: 0
+    font-size: 1.2em;
   }
   img {
     margin-right: 20px;

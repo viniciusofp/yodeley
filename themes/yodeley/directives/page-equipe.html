@@ -1,21 +1,21 @@
 <div id="equipe" class="container-fluid" ng-controller="Equipe">
 	<div class="row">
 		<div class="container">
-			<div class="row">
-			<div class="col-sm-12 text-center">
-				<h1>equipe</h1>
-			</div>
+			<div class="row text-center">
+				<div class="col-sm-12">
+					<h1>equipe</h1>
+				</div>
 
-			<div class="col-sm-6" ng-repeat="membro in equipe">
-			  <div class="panel panel-default">
-				<div class="panel-body">
-					<img class="pull-left" ng-src="{{ membro.featured_image }}" alt="" style="width: 150px;">
-					<h3 ng-bind-html="membro.title.rendered"></h3>
-					<div ng-bind-html="membro.content.rendered"></div>
-				</div>	
-			  </div>			
+				<div class="col-sm-6 col-md-3" ng-repeat="membro in equipe">
+				  <div class="panel panel-default">
+					<div class="panel-body">
+						<img ng-src="{{ membro.featured_image }}" alt="" >
+						<h3 ng-bind-html="membro.title.rendered"></h3>
+						<small ng-bind-html="membro.content.rendered"></small>
+					</div>	
+				  </div>			
+				</div>
 			</div>
 		</div>
-
 	</div>
 </div>

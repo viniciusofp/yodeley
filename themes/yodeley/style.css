@@ -265,8 +265,8 @@ img {
 #produtora {
   text-align: center;
   color: white;
-  padding-top: 20vh;
-  padding-bottom: 20vh; }
+  padding-top: 25vh;
+  padding-bottom: 25vh; }
   #produtora h1 {
     display: inline-block;
     margin-bottom: 30px;
@@ -299,14 +299,17 @@ img {
 
 #equipe {
   background-color: #fff1e2;
-  padding-top: 20vh;
-  padding-bottom: 20vh; }
+  padding-top: 25vh;
+  padding-bottom: 25vh; }
+  #equipe .panel-default {
+    background: transparent;
+    border-color: white; }
   #equipe h1 {
     display: inline-block;
     margin-bottom: 30px;
     text-transform: lowercase; }
   #equipe h3 {
-    margin-top: 0; }
+    font-size: 1.2em; }
   #equipe img {
     margin-right: 20px;
     margin-bottom: 8px; }
