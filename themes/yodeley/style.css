@@ -29,19 +29,19 @@ a, a:hover, a:active, a:visited {
   text-decoration: none; }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   /* 2x body copy size = 32px */
   line-height: 1.25;
   /* 45px / 36px */ }
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     /* 2.5x body copy size = 40px */
     line-height: 1.125; } }
 @media (min-width: 1080px) {
   h1 {
-    font-size: 3em;
+    font-size: 4em;
     /* 3x body copy size = 48px */
     line-height: 1.05;
     /* keep to a multiple of the 20px line height and something more appropriate for display headings */ } }
@@ -200,7 +200,8 @@ img {
         margin: 0; }
       #upperHeader #social #entreemcontato h4 {
         margin-top: 0;
-        font-size: 1em; }
+        font-weight: 300;
+        color: #fff1e2; }
 
 #cats .row > div {
   height: 50vh;
@@ -275,12 +276,13 @@ img {
 #produtora {
   text-align: center;
   color: white;
-  padding-top: 25vh;
-  padding-bottom: 25vh; }
+  padding-top: 20vh;
+  padding-bottom: 20vh; }
   #produtora h1 {
     display: inline-block;
     margin-bottom: 30px;
-    text-transform: lowercase; }
+    text-transform: lowercase;
+    color: #f8ba72; }
 
 .item-home {
   height: 250px;
@@ -314,18 +316,46 @@ img {
 
 #equipe {
   background-color: #fff1e2;
-  padding-top: 25vh;
-  padding-bottom: 25vh; }
+  padding-top: 20vh;
+  padding-bottom: 20vh; }
   #equipe .panel-default {
     background: transparent;
-    border-color: white; }
+    border-color: transparent;
+    box-shadow: none;
+    margin-bottom: 0; }
+  #equipe small p {
+    background: #bc475c;
+    color: #fff1e2;
+    padding: 15px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 300px;
+    z-index: 99999;
+    display: none; }
+    #equipe small p::before {
+      content: "\f0d8";
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #3c4272;
+      z-index: 99999; }
+  #equipe .trigger {
+    display: inline; }
+    #equipe .trigger:hover small p {
+      display: block; }
   #equipe h1 {
     display: inline-block;
-    margin-bottom: 30px;
-    text-transform: lowercase; }
+    margin-bottom: 60px;
+    text-transform: lowercase;
+    color: #bc475c; }
+  #equipe h3 {
+    color: #181818; }
   #equipe img {
     margin-right: 20px;
-    margin-bottom: 8px; }
+    margin-bottom: 8px;
+    border-radius: 100%; }
 
 #wrapper {
   overflow-x: hidden; }

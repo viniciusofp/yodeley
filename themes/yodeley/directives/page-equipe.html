@@ -9,9 +9,12 @@
 				<div class="col-sm-6 col-md-3" ng-repeat="membro in equipe">
 				  <div class="panel panel-default">
 					<div class="panel-body">
-						<img ng-src="{{ membro.featured_image }}" alt="" >
-						<h3 ng-bind-html="membro.title.rendered"></h3>
-						<small ng-bind-html="membro.content.rendered"></small>
+						<div class="trigger">
+							<img ng-src="{{ membro.featured_image }}" alt="" >
+							<h3 ng-bind-html="membro.title.rendered"></h3>
+							<small ng-bind-html="membro.content.rendered"></small>
+							
+						</div>
 					</div>	
 				  </div>			
 				</div>

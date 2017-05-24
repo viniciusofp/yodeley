@@ -52,7 +52,7 @@ a, a:hover, a:active, a:visited {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   /* 2x body copy size = 32px */
   line-height: 1.25;
   /* 45px / 36px */
@@ -60,7 +60,7 @@ h1 {
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     /* 2.5x body copy size = 40px */
     line-height: 1.125;
   }
@@ -68,7 +68,7 @@ h1 {
 
 @media (min-width: 1080px) {
   h1 {
-    font-size: 3em;
+    font-size: 4em;
     /* 3x body copy size = 48px */
     line-height: 1.05;
     /* keep to a multiple of the 20px line height and something more appropriate for display headings */
@@ -276,7 +276,8 @@ img {
       }
       h4 {
         margin-top: 0;
-        font-size: 1em;
+        font-weight: 300;
+        color: $white;
       }
     }
   }
@@ -373,13 +374,13 @@ img {
 #produtora {
   text-align: center;
   color: white;
-  padding-top: 25vh;
-  padding-bottom: 25vh;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
   h1 {
     display: inline-block;
     margin-bottom: 30px;
     text-transform: lowercase;
-
+    color: $yellow;
   }
 }
 
@@ -419,22 +420,54 @@ img {
 
 #equipe {
   background-color: $white;
-  padding-top: 25vh;
-  padding-bottom: 25vh;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
   .panel-default {
     background: transparent;
-    border-color: white;
+    border-color: transparent;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+  small p {
+    background: $red;
+    color: $white;
+    padding: 15px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 300px;
+    z-index: 99999;
+    display: none;
+    &::before {
+      content: "\f0d8";
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $blue;
+      z-index: 99999;
+    }
+  }
+
+  .trigger{
+    display: inline;
+    &:hover small p {
+      display: block;
+    }
   }
   h1 {
     display: inline-block;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     text-transform: lowercase;
+    color: $red
   }
   h3 {
+    color: $black;
   }
   img {
     margin-right: 20px;
     margin-bottom: 8px;
+    border-radius: 100%;
   }
 }
 
