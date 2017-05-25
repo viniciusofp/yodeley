@@ -190,6 +190,13 @@ p {
   line-height: 1.6em
 }
 
+.spacer {
+  clear: both;
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
 .absolute-center {
 	position: absolute;
 	top: 50%;
@@ -313,7 +320,7 @@ img {
     position: absolute;
     height: 50%;
     width: 50%;
-    opacity: 0.3;
+    opacity: 0.2;
     background-size: cover;
     background-position: center;
     transition: 0.2s;
@@ -351,7 +358,7 @@ img {
   }
   .meta {
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
     padding: 30px;
     text-align: center;
     h2  {
@@ -457,17 +464,22 @@ img {
   }
   h1 {
     display: inline-block;
-    margin-bottom: 60px;
+    margin-top: 0;
+    margin-bottom: 30px;
     text-transform: lowercase;
     color: $red
   }
   h3 {
     color: $black;
+    font-family: $font-face;
+    font-weight: 800;
+    font-size: 1.2em
   }
   img {
     margin-right: 20px;
     margin-bottom: 8px;
     border-radius: 100%;
+    width: 200px;
   }
 }
 

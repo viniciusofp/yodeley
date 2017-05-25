@@ -233,6 +233,13 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 // Equipe Controller
 
 .controller('Equipe', ['$scope', '$routeParams', '$q', '$location',  'wp', function($scope, $routeParams, $q, $location, wp) {
+	$q.all([
+	    wp.singlePage('equipe').$promise
+	]).then( function (data) { 
+		$scope.equipePage = data[0][0];
+		console.log($scope.equipePage)
+	});
+
 	$scope.equipe = wp.equipe;
 	$q.all([
 	    $scope.equipe.$promise
