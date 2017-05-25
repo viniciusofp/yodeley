@@ -221,7 +221,7 @@ img {
   transition: 0.2s;
   position: relative; }
   #cats .row > div:hover {
-    background-color: #181818;
+    background: #181818;
     cursor: pointer; }
     #cats .row > div:hover .meta p {
       display: block; }
