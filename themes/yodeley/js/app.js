@@ -32,6 +32,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	Filters
 */
 
+
 // Adiciona id do Soundcloud à URL
 .filter('soundcloudEmbedUrl', function ($sce) {
 	return function(audioId) {
@@ -58,6 +59,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 /*
 	Directives
 */
+
 
 // Header
 .directive('yodeleyHeader', function() {
@@ -258,64 +260,55 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 
 .controller('Single', ['$scope', '$http', '$routeParams', '$q', '$location', 'wp', function($scope, $http, $routeParams, $q, $location, wp) {
 
-	console.log($location.$$url);
-
 	if ($routeParams.catSlug == 'home') {
 		$scope.theRoute = [{
 			slug: 'home'
 		}];
+		
 		$scope.posts = wp.posts;
-
+		
 		$scope.catArray = [];
 
 		$q.all([
 		    $scope.posts.$promise
 		]).then( function (data) {
 			for (i in data[0]) {
-			
 				i = parseInt(i);
-
 				if (Number.isInteger(i)) {
 					$scope.catArray[i] = wp.getCategoryById(data[0][i].categories[0])
-
 				};
-
 			}
 		});
-
 	} else {
 		$scope.theRoute = wp.getCategories($routeParams.catSlug);
-
 		$q.all([
 		    $scope.theRoute.$promise
 		]).then( function (data) { 
+			document.querySelector('title').innerHTML = data[0][0];
 			$scope.posts = wp.catPosts(data[0][0].id);
-
 			$scope.catArray = [];
+			$q.all([
+			    $scope.posts.$promise
+			]).then( function (data) {
 
-		$q.all([
-		    $scope.posts.$promise
-		]).then( function (data) {
-			for (i in data[0]) {
-			
-				i = parseInt(i);
+				for (i in data[0]) {
+					i = parseInt(i);
+					if (Number.isInteger(i)) {
+						$scope.catArray[i] = wp.getCategoryById(data[0][i].categories[0])
 
-				if (Number.isInteger(i)) {
-					$scope.catArray[i] = wp.getCategoryById(data[0][i].categories[0])
-
-				};
-
-			}
-		});	
+					};
+				}
+			});	
 		});
 	};
 
 
-
-
 	$http.get("index.php/wp-json/wp/v2/posts?slug=" + $routeParams.postSlug).success(function(res){
-	    $scope.single = res[0]; 
-	    console.log($scope.single);	
+	    $scope.single = res[0];
+	    
+		console.log(res[0])
+		document.querySelector('title').innerHTML = res[0].title.rendered + ' - Yodeley';
+
 	});
 	
 	$scope.openModaal = function() {
@@ -340,6 +333,9 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	    $scope.theRoute.$promise
 	]).then( function (data) { 
 		$scope.posts = wp.catPosts(data[0][0].id);
+		console.log(data[0][0]);
+
+		document.querySelector('title').innerHTML = data[0][0].name + ' - Yodeley';
 	});
 
 }])
@@ -357,7 +353,6 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 .controller('CatGrid', ['$scope', '$routeParams', '$q',  'wp', function($scope, $routeParams, $q, wp) {
 
 	$scope.categories = wp.categories;
-	console.log($scope.categories);
 
 	$scope.imgs = [];
 

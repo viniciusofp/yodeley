@@ -20,7 +20,7 @@ $font-face2: 'Oswald';
 body {
 	font-family: $font-face, Helvetica, sans-serif;
 	font-weight: 300;
-	font-size: 16px;
+	font-size: 18px;
   background-image: url("/wp-content/themes/yodeley/img/bodyBg.png");
   overflow-x: hidden;
 }
@@ -66,7 +66,7 @@ h1 {
   }
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 1200px) {
   h1 {
     font-size: 4em;
     /* 3x body copy size = 48px */
@@ -90,7 +90,7 @@ h2 {
   }
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 1200px) {
   h2 {
     font-size: 2.25em;
     /* 2.25x body copy size = 36px */
@@ -113,7 +113,7 @@ h3 {
   }
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 1200px) {
   h3 {
     font-size: 1.75em;
     /* 1.75x body copy size = 28px */
@@ -363,7 +363,7 @@ img {
     text-align: center;
     h2  {
       margin-top: 0;
-      font-size: 3em;
+      font-size: 4em;
       font-weight: 300;
       color: $white;
       text-transform: lowercase;
@@ -394,6 +394,7 @@ img {
 .item-home {
   height: 250px;
   color: white;
+  border: 1px solid $black;
   background: rgb(24,24,24);
   background: -moz-linear-gradient(45deg, rgba(24,24,24,1) 0%, rgba(43,41,39,1) 100%);
   background: -webkit-linear-gradient(45deg, rgba(24,24,24,1) 0%,rgba(43,41,39,1) 100%);
