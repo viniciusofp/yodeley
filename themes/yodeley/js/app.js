@@ -200,6 +200,9 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 		}];
 	$scope.posts = wp.posts;
 
+	document.querySelector('title').innerHTML = 'Yodeley';
+
+
 	$scope.catArray = [];
 
 	$q.all([
