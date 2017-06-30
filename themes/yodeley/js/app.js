@@ -49,9 +49,9 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 .filter('itemClass', function () {
 	return function (i) {
 		if (i == 0 || (i + 1) % 4 == 0 || i % 4 == 0) {
-			return 'col-sm-7 col-md-4'
+			return 'col-sm-6 col-md-4'
 		} else {
-			return 'col-sm-5 col-md-4'
+			return 'col-sm-6 col-md-4'
 		};
 	}
 })
