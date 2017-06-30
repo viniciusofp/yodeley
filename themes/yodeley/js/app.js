@@ -70,6 +70,15 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
   };
 
 })
+// Navbar
+.directive('yodeleyNavbar', function() {
+  
+  return {
+      restrict: 'E',
+      templateUrl: '/wp-content/themes/yodeley/directives/navbar.html'
+  };
+
+})
 // Footer
 .directive('yodeleyFooter', function() {
   
