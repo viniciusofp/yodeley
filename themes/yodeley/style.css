@@ -6,7 +6,7 @@ Theme Name: Yodeley
 body {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 16px;
   background-image: url("/wp-content/themes/yodeley/img/bodyBg.png");
   overflow-x: hidden; }
 
@@ -230,37 +230,15 @@ img {
     #cats .row > div:hover .bg-img {
       opacity: 0.1; }
 #cats .bg-img {
+  top: 0;
+  left: 0;
   position: absolute;
-  height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 100%;
   opacity: 0.2;
   background-size: cover;
   background-position: center;
   transition: 0.2s; }
-  #cats .bg-img:nth-child(1) {
-    top: 0;
-    left: 0; }
-    @media all and (max-width: 1280px) and (min-width: 768px) {
-      #cats .bg-img:nth-child(1) {
-        width: 100%; } }
-  #cats .bg-img:nth-child(2) {
-    top: 0;
-    right: 0; }
-    @media all and (max-width: 1280px) and (min-width: 768px) {
-      #cats .bg-img:nth-child(2) {
-        display: none; } }
-  #cats .bg-img:nth-child(3) {
-    bottom: 0;
-    left: 0; }
-    @media all and (max-width: 1280px) and (min-width: 768px) {
-      #cats .bg-img:nth-child(3) {
-        width: 100%; } }
-  #cats .bg-img:nth-child(4) {
-    bottom: 0;
-    right: 0; }
-    @media all and (max-width: 1280px) and (min-width: 768px) {
-      #cats .bg-img:nth-child(4) {
-        display: none; } }
 #cats .meta {
   width: 100%;
   max-width: 360px;
@@ -272,7 +250,7 @@ img {
     font-weight: 300;
     color: #fff1e2;
     text-transform: lowercase;
-    transition: 0.5s; }
+    transition: 0.2s; }
   #cats .meta p {
     font-weight: 300;
     opacity: 1;
@@ -329,7 +307,7 @@ img {
     background: transparent;
     border-color: transparent;
     box-shadow: none;
-    margin-bottom: 0; }
+    margin-bottom: 20px; }
   #equipe small p {
     background: #bc475c;
     color: #fff1e2;
@@ -341,13 +319,6 @@ img {
     width: 300px;
     z-index: 99999;
     display: none; }
-    #equipe small p::before {
-      content: "\f0d8";
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: #3c4272;
-      z-index: 99999; }
   #equipe .trigger {
     display: inline; }
     #equipe .trigger:hover small p {
@@ -367,7 +338,10 @@ img {
     margin-right: 20px;
     margin-bottom: 8px;
     border-radius: 100%;
-    width: 200px; }
+    width: 200px;
+    transition: 0.1s; }
+    #equipe img:hover {
+      border: 3px solid #bc475c; }
 
 #wrapper {
   overflow-x: hidden; }

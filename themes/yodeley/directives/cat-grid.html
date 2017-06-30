@@ -3,11 +3,7 @@
 
 		<div ng-class="catGrid($index)" ng-repeat="cat in categories track by $index">
 			<a ng-href="/#/{{ cat.slug }}">
-				<div class="bg-img" style="background-image: url({{ imgs[$index][0].featured_image }})"></div>
-				<div class="bg-img" style="background-image: url({{ imgs[$index][1].featured_image }})"></div>
-				<div class="bg-img" style="background-image: url({{ imgs[$index][2].featured_image }})"></div>
-				<div class="bg-img" style="background-image: url({{ imgs[$index][3].featured_image }})" ></div>
-
+				<div class="bg-img" style="background-image: url({{ imgs[$index][0].featured_image_medium }})"></div>
 				<div class="meta absolute-center">
 					<h2 ng-bind-html="cat.name"></h2>
 					<p ng-bind-html="cat.description"></p>

@@ -379,11 +379,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 
 
 	$scope.catGrid = function(index) {
-		if (index <= 2) {
-			return 'col-sm-4';
-		} else {
 			return 'col-sm-6'
-		};
 	}
 
 }]);
