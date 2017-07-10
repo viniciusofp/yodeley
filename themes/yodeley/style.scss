@@ -18,6 +18,7 @@ $font-face2: 'Oswald';
 
 
 body {
+  padding-top: 50px;
 	font-family: $font-face, Helvetica, sans-serif;
 	font-weight: 300;
 	font-size: 16px;
@@ -221,42 +222,50 @@ img {
 
 // NAV
 
-.navHide {
-  margin-top: -110px!important;
+// we'll add this class using javascript
+nav {
+  transition: 0.2s ease-in;
 }
-.navShow {
-  margin-top: 15px!important;
-}
-
-.navbar.navbar-inverse {
-	margin-bottom: 0;
-	border-radius: 0;
-  background: transparent;
-  color: $white;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.1);
-  margin: 15px auto;
-  width: 350px;
-  border: none;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
+.nav-up {
+  top: -40px; // same as header height. use variables in LESS/SASS
 }
 
-.navbar-inverse ul.navbar-nav {
-  float: none;
-  text-align: center;
-	li {
-	    float: none;
-	    display: inline-block;
-	    a {
-        font-size: 1.2em;
-	    	color: $yellow;
-	    	text-transform: lowercase;
-        cursor: pointer;
-	    }
-	}
-}
+// .navHide {
+//   margin-top: -110px!important;
+// }
+// .navShow {
+//   margin-top: 15px!important;
+// }
+
+// .navbar.navbar-inverse {
+// 	margin-bottom: 0;
+// 	border-radius: 0;
+//   background: transparent;
+//   color: $white;
+//   border-radius: 10px;
+//   background: rgba(0,0,0,0.1);
+//   margin: 15px auto;
+//   width: 350px;
+//   border: none;
+//   position: absolute;
+//   left: 50%;
+//   transform: translate(-50%, 0);
+// }
+
+// .navbar-inverse ul.navbar-nav {
+//   float: none;
+//   text-align: center;
+// 	li {
+// 	    float: none;
+// 	    display: inline-block;
+// 	    a {
+//         font-size: 1.2em;
+// 	    	color: $yellow;
+// 	    	text-transform: lowercase;
+//         cursor: pointer;
+// 	    }
+// 	}
+// }
 
 // PARTICLEJS BACKGROUND
 #particles-js {

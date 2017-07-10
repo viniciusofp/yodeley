@@ -4,6 +4,7 @@ Theme Name: Yodeley
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,600,700");
 @import url("https://fonts.googleapis.com/css?family=Oswald:300,500,600");
 body {
+  padding-top: 50px;
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -153,37 +154,11 @@ img {
   max-width: 100% !important;
   height: auto; }
 
-.navHide {
-  margin-top: -110px !important; }
+nav {
+  transition: 0.2s ease-in; }
 
-.navShow {
-  margin-top: 15px !important; }
-
-.navbar.navbar-inverse {
-  margin-bottom: 0;
-  border-radius: 0;
-  background: transparent;
-  color: #fff1e2;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.1);
-  margin: 15px auto;
-  width: 350px;
-  border: none;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0); }
-
-.navbar-inverse ul.navbar-nav {
-  float: none;
-  text-align: center; }
-  .navbar-inverse ul.navbar-nav li {
-    float: none;
-    display: inline-block; }
-    .navbar-inverse ul.navbar-nav li a {
-      font-size: 1.2em;
-      color: #f8ba72;
-      text-transform: lowercase;
-      cursor: pointer; }
+.nav-up {
+  top: -40px; }
 
 #particles-js {
   background: transparent;
