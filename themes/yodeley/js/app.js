@@ -42,7 +42,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 // Adiciona id do Youtube à URL
 .filter('youtubeEmbedUrl', function ($sce) {
 	return function(videoId) {
-		return $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId +"?rel=0&amp;showinfo=0");
+		return $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId +"?rel=0&amp;showinfo=0&enablejsapi=1");
 	};
 })
 // Classes para items de posts
@@ -328,7 +328,9 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	}
 	
 	$scope.closeModaal = function() {
-		$('#modaal').removeClass('active')
+		$('#modaal').removeClass('active');
+		var el_src = $('iframe').attr("src");
+        $('iframe').attr("src",el_src);
 	}
 
 }])
