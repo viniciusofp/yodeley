@@ -157,6 +157,13 @@ img {
 nav {
   transition: 0.2s ease-in; }
 
+.navbar-inverse {
+  background-color: #bc475c; }
+  .navbar-inverse ul.navbar-nav li > a {
+    color: white;
+    font-weight: 600;
+    text-transform: lowercase; }
+
 .nav-up {
   top: -40px; }
 
@@ -172,7 +179,7 @@ nav {
   opacity: 0.25; }
 
 #brand {
-  padding: 60px 30px 60px;
+  padding: 30px;
   width: 400px; }
 
 #upperHeader {
