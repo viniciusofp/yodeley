@@ -226,10 +226,9 @@ img {
 nav {
   transition: 0.2s ease-in;
 }
-.navbar-inverse {
-  background-color: $red;
-  ul.navbar-nav li>a { color: white; font-weight: 600; text-transform: lowercase; } 
-}
+
+ul.navbar-nav li>a { font-weight: 600; text-transform: lowercase; } 
+
 .nav-up {
   top: -40px; // same as header height. use variables in LESS/SASS
 }
