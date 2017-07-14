@@ -19,5 +19,4 @@
   crossorigin="anonymous"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/adaptivebackground.js"></script>
 
-<yodeley-navbar></yodeley-navbar>
 <yodeley-header></yodeley-header>

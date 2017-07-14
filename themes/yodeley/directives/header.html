@@ -1,4 +1,38 @@
+<nav id="navWay" class="navbar navbar-inverse navbar-fixed-top" ng-controller="Nav">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Abrir Menu</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/#/home">início</a></li>
+    <li ng-repeat="cat in categories"><a ng-href="/#/{{ cat.slug }}" ng-bind-html="cat.name"></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<script>
+var lastScrollTop = 0;
+
+window.addEventListener("scroll", function(){  
+   var st = window.pageYOffset || document.documentElement.scrollTop;  
+   if (st > lastScrollTop){
+       $('#navWay').addClass('nav-up');
+   } else {
+       $('#navWay').removeClass('nav-up');
+   }
+   lastScrollTop = st;
+}, false);
+</script>
 
 <div id="upperHeader" class="container">
   <div class="row">
@@ -6,10 +40,10 @@
       <a href="/#/home"><img id="brand" src="/wp-content/themes/yodeley/img/logo.png"></a>
       <div id="social" class="hidden-xs">
         <ul>
-          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-          <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
-          <li><i class="fa fa-youtube" aria-hidden="true"></i></li>
-          <li><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+          <li><a target="_blank" href="https://www.facebook.com/yodeleyav/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a target="_blank" href=https://soundcloud.com/yodeley/""><i class="fa fa-soundcloud" aria-hidden="true"></i></a></li>
+          <li><a target="_blank" href="https://www.youtube.com/channel/UCqdpccPqpYYxCjl0uZNeAzg"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+          <li><a target="_blank" href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
         </ul>
         <div id="entreemcontato">
           <p>entre em contato</p>

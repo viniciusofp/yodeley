@@ -186,16 +186,19 @@ ul.navbar-nav li > a {
     right: 0;
     top: 50%;
     transform: translate(0, -50%);
-    padding: 60px 30px 30px;
+    padding: 30px;
     color: #f8ba72;
     text-align: center; }
     #upperHeader #social li {
       display: inline;
       color: #f8ba72;
       font-size: 1.5em;
-      padding-left: 15px; }
+      padding-left: 15px;
+      transition: 0.3s; }
       #upperHeader #social li:first-of-type {
         padding-left: 0; }
+      #upperHeader #social li:hover {
+        color: #fff1e2; }
     #upperHeader #social #entreemcontato {
       margin-top: 15px;
       padding: 6px 12px 2px;
@@ -402,6 +405,9 @@ ul.navbar-nav li > a {
 
 *, *:before, *:after {
   box-sizing: border-box !important; }
+
+.itemrow {
+  margin-top: -100px; }
 
 .item {
   transition: all 0.2s ease-in;
