@@ -347,6 +347,7 @@ angular.module('yodeley', ['ngSanitize', 'ngResource', 'ngRoute', 'ngAnimate'])
 	    $scope.theRoute.$promise
 	]).then( function (data) { 
 		$scope.posts = wp.catPosts(data[0][0].id);
+		$scope.category = data[0][0];
 		console.log(data[0][0]);
 
 		document.querySelector('title').innerHTML = data[0][0].name + ' - Yodeley';
